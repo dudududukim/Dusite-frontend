@@ -14,7 +14,9 @@ export default {
             axios
                 .get('/api/getList')
                 .then((res) => {
-                    console.log(res.data);
+                    const responseData = res.data;
+                    const visitorsData = JSON.parse(responseData);
+                    console.log(visitorsData[0].contents);
                 })
                 .catch((err) => {
                     console.error(err);
