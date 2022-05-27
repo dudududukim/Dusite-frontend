@@ -82,3 +82,7 @@
     height: 1px!important;
     margin: -1px!important;
 }
+
+div section {
+    display: block;
+}

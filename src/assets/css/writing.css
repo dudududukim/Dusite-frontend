@@ -1,0 +1,142 @@
+#wrt_container {
+    width: 1100px;
+    min-height: 500px;
+    margin: 0 auto;
+}
+
+.wrt_group{
+    float: left;
+    width: 1036px;
+    padding: 24px 0 48px;
+    margin: 0 auto;
+}
+
+.wrt_group_post{
+    margin: 0 36px;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.wrt_group_header{
+    position: relative;
+    height: 29px;
+}
+
+.wrt_group_body{
+    min-height: 400px;
+    position: relative;
+}
+
+.wrt_group_footer{
+    height: 30px;
+    position: relative;
+    border-bottom: 1px solid rgb(102, 102, 102, .5);
+}
+
+.wrt_group_footer .list_page{
+    width: 91px;
+    margin: auto auto;
+    padding: 7px 0;
+    text-align: center;
+}
+
+.wrt_group span .header{
+    width: 100%;
+    font-size: 100%;
+    padding: 4px 0 9px;
+    float: left;
+}
+
+.wrt_group_header .deco{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    color: transparent;
+    content: '';
+    background-image: url(../JPG/fountain_pen.png);
+    background-size: 40px 40px;
+    vertical-align: -3px;
+    margin-right: -2px;
+    opacity: 1;
+}
+
+#container .cline{
+    border-bottom-color: rgb(102, 102, 102);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    opacity: .5;
+    border-bottom-style: solid;
+    border-width: 1px;
+}
+
+.wrt_post_list{
+    table-layout: fixed;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.wrt_post_list th{
+    text-align: left;
+    position: relative;
+    font-weight: 500;
+}
+
+.wrt_post_list td{
+    position: relative;
+}
+
+.wrt_post_list .post_title{
+    position: relative;
+    width: 100%;
+}
+
+.wrt_post_list colgroup .col_num{
+    width: 83px!important;
+}
+
+.wrt_post_list colgroup .col_click{
+    width: 83px!important;
+}
+
+.wrt_post_list colgroup .col_post_title{
+    width: 100%!important;
+}
+
+.wrt_post_list colgroup .col_date{
+    width: 105px!important;
+}
+
+.wrt_post_list .num{
+    font-size: 120%;
+}
+
+.wrt_post_list .click{
+    font-size: 120%;
+}
+
+.wrt_post_list .date{
+    font-size: 120%;
+}
+
+.list_page .page{
+    position: relative;
+    height: 20px;
+    margin: 0 1px;
+    padding: 6px 3px 3px;
+    letter-spacing: -2px;
+}
+
+.blind{
+    overflow: hidden!important;
+    position: absolute!important;
+    clip: rect(0 0 0 0 )!important;
+    width: 1px!important;
+    height: 1px!important;
+    margin: -1px!important;
+}

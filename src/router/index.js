@@ -1,11 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import imgView from '../views/imgView.vue';
+import writingView from '../views/writingView.vue';
+import visitorsView from '../views/visitorsView.vue';
+import infoView from '../views/infoView.vue';
 
 const routes = [
     {
         path: '/img',
         name: 'imgView',
         component: imgView,
+    },
+    {
+        path: '/info',
+        name: 'Info',
+        component: infoView,
+    },
+    {
+        path: '/writing',
+        name: 'Writing',
+        component: writingView,
+    },
+    {
+        path: '/visitors',
+        name: 'Visitors',
+        component: visitorsView,
     },
     {
         path: '/about',
