@@ -1,0 +1,6 @@
+crlf lf를 통해서 'cr' prettier/prettier문제 해결할것
+
+fromat save 체크
+prettier 머시키 다운
+eslint뭐시기 다운
+
