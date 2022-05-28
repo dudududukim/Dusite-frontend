@@ -18,7 +18,7 @@
                     <button @click="postVisitorsMsg(input_msg)">입력</button>
                 </div>
             </div>
-            <visitorsList msg="DB linked" />
+            <visitorsList msg="visitorsList" :key="componentkey" />
         </div>
     </div>
 </template>
@@ -34,8 +34,8 @@ export default {
     },
     data() {
         return {
-            messages: [],
             input_msg: '',
+            componentkey: 0,
         };
     },
     methods: {
@@ -49,7 +49,8 @@ export default {
                     contents: msg,
                 })
                 .then((res) => {
-                    console.log(res);
+                    console.log(res.data);
+                    this.componentkey = res.data;
                 })
                 .catch((err) => {
                     console.error(err);

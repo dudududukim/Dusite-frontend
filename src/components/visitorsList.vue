@@ -15,7 +15,7 @@
                 </td>
                 <td>
                     <p class="post_title">
-                        {{ msg.message }}
+                        {{ msg.contents }}
                     </p>
                     <i class="cline"></i>
                 </td>
@@ -27,7 +27,33 @@
 </template>
 
 <script>
-export default {};
+import axios from 'axios';
+
+export default {
+    created() {
+        this.getVisitorsList();
+    },
+    data() {
+        return {
+            messages: [],
+        };
+    },
+    methods: {
+        getVisitorsList: function () {
+            axios
+                .get('/api/getVisitorsList')
+                .then((res) => {
+                    const visitorsList = res.data;
+                    for (let i = 0; i < visitorsList.length; i++) {
+                        this.messages.unshift(visitorsList[i]);
+                    }
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
+        },
+    },
+};
 </script>
 
 <style></style>
