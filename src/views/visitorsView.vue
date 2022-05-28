@@ -8,47 +8,30 @@
                         type="text"
                         v-model="input_msg"
                         placeholder="작성란"
-                        v-on:keyup.enter="addmsg(input_msg)"
+                        v-on:keyup.enter="postVisitorsMsg(input_msg)"
                         ref="inputtag"
                         @focus="makeblank()"
                         @blur="notfocused()"
                     />
                 </div>
                 <div class="input_button">
-                    <button @click="addmsg(input_msg)">입력</button>
+                    <button @click="postVisitorsMsg(input_msg)">입력</button>
                 </div>
             </div>
-            <div id="list_pack">
-                <table class="visitor_list">
-                    <caption></caption>
-                    <colgroup>
-                        <col class="col_date" />
-                        <col class="col_message" />
-                    </colgroup>
-                    <tr id="each_writing" v-for="(msg, i) in messages" :key="i">
-                        <td>
-                            <p class="date">
-                                {{ msg.date }}
-                            </p>
-                            <i class="cline"></i>
-                        </td>
-                        <td>
-                            <p class="post_title">
-                                {{ msg.message }}
-                            </p>
-                            <i class="cline"></i>
-                        </td>
-
-                        <i class="cline" v-if="false"></i>
-                    </tr>
-                </table>
-            </div>
+            <visitorsList msg="DB linked" />
         </div>
     </div>
 </template>
 
 <script>
+import visitorsList from '@/components/visitorsList.vue';
+import axios from 'axios';
+
 export default {
+    name: 'VisitorsView',
+    components: {
+        visitorsList,
+    },
     data() {
         return {
             messages: [],
@@ -56,10 +39,21 @@ export default {
         };
     },
     methods: {
-        addmsg(msg) {
+        postVisitorsMsg(msg) {
+            if (!msg) return alert('내용을 입력해 주세요!');
             let today = new Date();
-            var inputmsg = { date: today.toLocaleDateString(), message: msg };
-            this.messages.unshift(inputmsg);
+            today = today.toLocaleDateString();
+            axios
+                .post('/api/postVisitorsMsg', {
+                    date: today,
+                    contents: msg,
+                })
+                .then((res) => {
+                    console.log(res);
+                })
+                .catch((err) => {
+                    console.error(err);
+                });
             this.input_msg = '';
         },
         notfocused() {
