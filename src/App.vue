@@ -72,7 +72,7 @@ export default {
                 },
                 {
                     name: '블로그',
-                    url: 'https://blog.naver.com/rlaengux',
+                    url: '',
                     visiable: true,
                 },
                 { name: '관리자', url: '', visiable: false },
